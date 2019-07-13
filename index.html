@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 1.顶部元素10px补丁 */
+        body{
+            padding-top:10px;
+        }
+        .all_bg{
+            width:800px;height:600px;
+            margin:0 auto;/*水平居中*/
+        }
+        /* 定位：父元素相对定位，子元素绝对定位 */
+        #allcanvas{
+            position:relative;
+            width:800px;height:600px;
+            margin:0;
+        }
+        #canvas1{
+            position:absolute;
+            width:800px;height:600px;
+            bottom:0;
+            left:0;
+            z-index:1;/*前面画布*/
+        }
+        #canvas2{
+            position:absolute;
+            width:800px;height:600px;
+            bottom:0;
+            left:0;
+            z-index:0;/*后面画布*/
+        }
+    </style>
+</head>
+<body>
+    <!-- 最外层div背景 -->
+    <div class='all_bg'>
+        <!-- 所有画布 -->
+        <div id='allcanvas'>
+            <canvas id='canvas1' width='800' height='600' style='border:1px solid blue'>前面画布</canvas>
+            <canvas id='canvas2' width='800' height='600' style='border:1px solid red'>后面画布</canvas>
+        </div>
+    </div>
+    <script src='./js/main.js'></script>
+    <script src='./js/background.js'></script>
+    <script src='./js/ane.js'></script>
+</body>
+</html>
