@@ -11,6 +11,8 @@ var bgPic;//背景图片
 var ane;
 // 1.2 创建全局变量保存食物
 var fruit;
+// 1.3 创建全局变量保存大鱼
+var mom;
 // 2.创建函数game 第一个执行的函数：入口函数
 function game(){
     init();
@@ -38,6 +40,9 @@ function init(){
     // 3.5 创建食物对象并且调用初始化方法
     fruit=new fruitObj();
     fruit.init();
+    // 3.6 创建大鱼对象并且调用初始化方法
+    mom=new momObj();
+    mom.init();
 }
 // 4.创建函数gameloop 循环绘制元素
 function gameloop(){
@@ -51,6 +56,8 @@ function gameloop(){
     ane.draw();
     // 4.7调用绘制食物函数
     fruit.draw();
+    // 4.8 调用绘制大鱼函数
+    mom.draw();
 }
 // 5.页面加载调用game
 document.body.onload=game;
