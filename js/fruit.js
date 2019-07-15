@@ -55,16 +55,18 @@ fruitObj.prototype.draw=function(){
             };
             // 4.4判断食物宽度小于14 长大
             if(this.l[i]<=14){
-                this.l[i]+=this.spd[i];
+                this.l[i]+=this.spd[i]*12;
             }else{
                 // 4.5大于14向上漂浮
-                this.y[i]-=this.spd[i];
+                this.y[i]-=this.spd[i]*12*3;
             }
             // 4.6 绘制食物
             ctx2.drawImage(pic,
                 this.x[i],this.y[i],
                 this.l[i],this.l[i]
             );
+            // 4.7 当食物漂浮出屏幕隐藏
+            if(this.y[i]<0){this.alive[i]=false};
         }
     };
 };
