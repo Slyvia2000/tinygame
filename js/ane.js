@@ -17,15 +17,19 @@ aneObj.prototype.init=function(){
 aneObj.prototype.draw=function(){
     // 4.1 保存状态
     ctx2.save();
+    // 颜色
+    ctx2.strokeStyle='#3b154e';
+    // 边线宽度
+    ctx2.lineWidth=20;
+    // 圆角
+    ctx2.lineCap='round';
+    // 透明度
+    ctx2.globalAlpha=0.5;
     for(var i=0;i<this.num;i++){
         // 开始一条新路径
         ctx2.beginPath();
         ctx2.moveTo(this.x[i],canHeight);
         ctx2.lineTo(this.x[i],canHeight-this.len[i]);
-        ctx2.globalAlpha=0.5;
-        ctx2.lineWidth=30;
-        ctx2.lineCap='round';
-        ctx2.strokeStyle='#3b154e'
         ctx2.stroke();
     }
     // 4.7 恢复状态
