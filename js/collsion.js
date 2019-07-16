@@ -11,6 +11,14 @@ function momFruitsCollsion(){
             if(len<900){
                 // 1.5 食物消失
                 fruit.alive[i]=false;
+                // 1.6 计算分数score
+                // 1.7 判断食物类型
+                if(fruit.fruitType[i]!=='blue'){
+                    data.score+=200;
+                }else{
+                    data.score+=100;
+                }
+                // 1.8 分数累加
             }
         };
     };
