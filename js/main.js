@@ -48,6 +48,8 @@ function init(){
 function gameloop(){
     // 4.1创建定时器调用gameloop
     requestAnimationFrame(gameloop);
+    // 4.3 清除画布1
+    ctx1.clearRect(0,0,canWidth,canHeight);
     // 4.4调用监听食物数量的函数
     fruitMonitor();
     // 4.5调用绘制背景函数
