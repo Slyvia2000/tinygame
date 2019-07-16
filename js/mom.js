@@ -37,6 +37,9 @@ momObj.prototype.init=function(){
 };
 // 3.为大鱼构造方法添加方法draw
 momObj.prototype.draw=function(){
+    // 3.0 将鼠标位置赋值给大鱼
+    this.x=mx-25;
+    this.y=my-25;
     // 3.1 保存画笔1状态
     ctx1.save();
     // 3.2 修改旋转轴心在大鱼xy上

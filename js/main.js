@@ -28,9 +28,7 @@ function init(){
     // 3.2:初始化宽高
     canWidth=can1.width;
     canHeight=can1.height;
-    console.log(canWidth+':'+canHeight);
-    console.log(ctx1);
-    console.log(ctx2);
+    // console.log(canWidth+':'+canHeight);
     // 3.3:初始化图片
     bgPic=new Image();
     bgPic.src='src/background.jpg';
@@ -43,6 +41,8 @@ function init(){
     // 3.6 创建大鱼对象并且调用初始化方法
     mom=new momObj();
     mom.init();
+    // 3.7 创建鼠标移动监听绑定画布1上
+    can1.addEventListener('mousemove',canHandler);
 }
 // 4.创建函数gameloop 循环绘制元素
 function gameloop(){
@@ -64,3 +64,17 @@ function gameloop(){
 // 5.页面加载调用game
 document.body.onload=game;
 // 6.将文件main.js添加至index.html
+// 6.1 创建2个全局变量保存鼠标位置
+var mx=0;
+var my=0;
+// 7.鼠标移动画布事件处理函数
+function canHandler(e){
+    // 7.1 获取鼠标x位置
+    var x=e.offsetX;
+    // 7.2 获取鼠标y位置
+    var y=e.offsetY;
+    // console.log(x,y)
+    // 7.3 将鼠标x与y位置赋值全局变量mx，my
+    mx=x;
+    my=y;
+}
