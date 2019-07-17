@@ -89,7 +89,7 @@ function init(){
     // 3.11 halo
 
     halo=new haloObj();
-    halo=init();
+    halo.init();
     
 }
 // 4.创建函数gameloop 循环绘制元素
@@ -106,7 +106,7 @@ function gameloop(){
     ctx1.clearRect(0,0,canWidth,canHeight);
     // 4.3.1 完成碰撞检测
     momFruitsCollsion();
-    momBabyCollision();
+    momBabyCollsion();
     // 4.4调用监听食物数量的函数
     fruitMonitor();
     // 4.5调用绘制背景函数
